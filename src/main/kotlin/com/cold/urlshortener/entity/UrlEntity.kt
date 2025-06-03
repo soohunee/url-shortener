@@ -15,8 +15,8 @@ class UrlEntity(
     @Column(name = "original_url", nullable = false, length = 255)
     var originalUrl: String,
 
-    @Column(name = "short_url", nullable = false, length = 255)
-    var shortUrl: String,
+    @Column(name = "short_key", nullable = false, length = 255)
+    var shortKey: String,
 
     @Column(name = "issuer", nullable = false, length = 255)
     var issuer: String,

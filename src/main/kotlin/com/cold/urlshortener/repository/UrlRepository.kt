@@ -4,4 +4,5 @@ import com.cold.urlshortener.entity.UrlEntity
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface UrlRepository : JpaRepository<UrlEntity, Long> {
+    fun findByShortKey(shorKey: String): UrlEntity?
 }
