@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service
 class UrlShortener(private val urlRepository: UrlRepository) {
     fun shortenUrl(originalUrl: String, issuer: String): String {
         val generatedId = IdGenerator.generateId()
-        val shortUrl = Base62Encoder.encode(generatedId.toString())
+        val shortUrl = Base62Encoder.encode(generatedId)
 
         saveUrl(generatedId, originalUrl, shortUrl, issuer)
 
