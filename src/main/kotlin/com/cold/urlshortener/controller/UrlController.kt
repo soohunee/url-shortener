@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController
 import java.net.URI
 
 
-@RestController("/v1")
+@RestController
 class UrlController(
     private val urlShortener: UrlShortener,
     private val urlFinder: UrlFinder
