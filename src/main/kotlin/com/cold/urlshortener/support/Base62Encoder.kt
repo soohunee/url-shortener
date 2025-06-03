@@ -8,15 +8,17 @@ object Base62Encoder {
     )
 
     fun encode(id: Long): String {
+        var currentId = id
         var quotient: Long
         var remainder: Int
         val result = ArrayDeque<String>()
 
         do {
-            quotient = id / 62
-            remainder = (id % 62).toInt()
+            quotient = currentId / 62
+            remainder = (currentId % 62).toInt()
 
             result.addFirst(CHARACTERS[remainder])
+            currentId = quotient
         } while(quotient != 0L)
 
         return result.joinToString("")
