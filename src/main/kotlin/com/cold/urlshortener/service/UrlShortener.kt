@@ -14,7 +14,7 @@ class UrlShortener(private val urlRepository: UrlRepository) {
 
         saveUrl(generatedId, originalUrl, shortUrl, issuer)
 
-        return shortUrl
+        return shortUrl.toUrlFormat()
     }
 
     private fun saveUrl(generatedId: Long, originalUrl: String, shortUrl: String, issuer: String) {
@@ -22,4 +22,6 @@ class UrlShortener(private val urlRepository: UrlRepository) {
 
         urlRepository.save(urlEntity)
     }
+
+    private fun String.toUrlFormat() = "http://localhost:8080/$this"
 }
